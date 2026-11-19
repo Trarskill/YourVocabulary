@@ -9,9 +9,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YourVocabulary">
 
-        <!-- Стартовий екран налаштувань -->
         <activity
-            android:name=".SettingsActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,12 +18,10 @@
             </intent-filter>
         </activity>
 
-        <!-- Екран вибору типу тесту -->
-        <activity
-            android:name=".TestTypeActivity"
+        <service
+            android:name=".service.DictionaryLoaderService"
             android:exported="false" />
-        <activity
-            android:name=".TestActivity"
-            android:exported="false" />
+
     </application>
+
 </manifest>
