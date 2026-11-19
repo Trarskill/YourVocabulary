@@ -30,10 +30,9 @@ import java.util.Locale;
 
 import stu.cn.ua.yourvocabulary.R;
 import stu.cn.ua.yourvocabulary.Word;
-import stu.cn.ua.yourvocabulary.service.DictionaryLoaderService;
-import stu.cn.ua.yourvocabulary.service.DictionaryState;
+import stu.cn.ua.yourvocabulary.service.DictionaryLoader;
 
-public class TestFragment extends Fragment implements DictionaryState.Listener {
+public class TestFragment extends Fragment implements DictionaryLoader.LoadCallback {
 
     public static final String MODE_CHOICE = "mode_choice";
     public static final String MODE_INPUT = "mode_input";
@@ -104,21 +103,9 @@ public class TestFragment extends Fragment implements DictionaryState.Listener {
         if (savedInstanceState != null) {
             restoreState(savedInstanceState);
         } else {
-            // Запускаємо IntentService для завантаження слів з файлу
-            DictionaryLoaderService.startLoading(requireContext(), language);
+            // Асинхронне завантаження слів з файлу за допомогою ExecutorService
+            DictionaryLoader.getInstance().loadWords(requireContext(), language, this);
         }
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        DictionaryState.getInstance().addListener(this);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        DictionaryState.getInstance().removeListener(this);
     }
 
     private void readArgs() {
@@ -168,16 +155,18 @@ public class TestFragment extends Fragment implements DictionaryState.Listener {
         tvUserAnswer.setVisibility(View.GONE);
     }
 
-    // --- Реалізація DictionaryState.Listener (патерн Observer) ---
+    // --- Реалізація DictionaryLoader.LoadCallback ---
 
     @Override
     public void onLoadingStarted() {
+        if (!isAdded()) return;
         progressBar.setVisibility(View.VISIBLE);
         scrollContent.setVisibility(View.GONE);
     }
 
     @Override
     public void onWordsLoaded(List<Word> words) {
+        if (!isAdded()) return;
         progressBar.setVisibility(View.GONE);
         scrollContent.setVisibility(View.VISIBLE);
 
@@ -194,6 +183,7 @@ public class TestFragment extends Fragment implements DictionaryState.Listener {
 
     @Override
     public void onLoadingError(String message) {
+        if (!isAdded()) return;
         progressBar.setVisibility(View.GONE);
         Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show();
         router.navigateBack();
@@ -450,6 +440,8 @@ public class TestFragment extends Fragment implements DictionaryState.Listener {
 
         if (!wordList.isEmpty()) {
             loadQuestion();
+        } else {
+            DictionaryLoader.getInstance().loadWords(requireContext(), language, this);
         }
     }
 
@@ -457,5 +449,6 @@ public class TestFragment extends Fragment implements DictionaryState.Listener {
     public void onDestroyView() {
         super.onDestroyView();
         cancelTimer();
+        DictionaryLoader.getInstance().cancelCurrentTask();
     }
 }

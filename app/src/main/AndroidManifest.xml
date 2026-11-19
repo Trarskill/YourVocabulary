@@ -18,10 +18,6 @@
             </intent-filter>
         </activity>
 
-        <service
-            android:name=".service.DictionaryLoaderService"
-            android:exported="false" />
-
     </application>
 
 </manifest>

@@ -52,11 +52,22 @@
         android:textStyle="bold"
         android:visibility="gone" />
 
+    <TextView
+        android:id="@+id/tvUserAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tvCorrectAnswer"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
     <FrameLayout
         android:id="@+id/contentFrame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/tvCorrectAnswer"
+        android:layout_above="@id/tvUserAnswer"
         android:layout_below="@id/btnExitTest"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp">
@@ -185,17 +196,6 @@
                         android:backgroundTint="@color/colorPrimary"
                         android:text="@string/btn_check" />
                 </RelativeLayout>
-
-                <TextView
-                    android:id="@+id/tvUserAnswer"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/cardWord"
-                    android:layout_marginTop="@dimen/margin_section"
-                    android:gravity="center"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:visibility="gone" />
 
             </RelativeLayout>
         </ScrollView>

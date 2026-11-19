@@ -13,7 +13,6 @@ import stu.cn.ua.yourvocabulary.fragments.NavigationRouter;
 import stu.cn.ua.yourvocabulary.fragments.SettingsFragment;
 import stu.cn.ua.yourvocabulary.fragments.TestFragment;
 import stu.cn.ua.yourvocabulary.fragments.TestTypeFragment;
-import stu.cn.ua.yourvocabulary.service.DictionaryState;
 
 public class MainActivity extends AppCompatActivity implements NavigationRouter {
 
@@ -50,7 +49,6 @@ public class MainActivity extends AppCompatActivity implements NavigationRouter 
 
     @Override
     public void openTestScreen(String mode, String language, int questionCount, int timerSeconds) {
-        DictionaryState.getInstance().clear();
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragmentContainer,
