@@ -1,0 +1,24 @@
+<resources>
+    <!-- Базові кольори сірий / білий -->
+    <color name="colorPrimary">#5F666D</color>
+    <color name="colorPrimaryDark">#3F454B</color>
+    <color name="colorAccent">#7B858E</color>
+
+    <color name="colorBackground">#F4F5F7</color>     <!-- Світло-сірий фон екранів -->
+    <color name="cardBackground">#FFFFFF</color>      <!-- Білий фон карток -->
+    <color name="textColorPrimary">#212121</color>   <!-- Темно-сірий текст -->
+    <color name="textColorSecondary">#757575</color> <!-- Світло-сірий текст -->
+
+    <!-- Кольори кнопок та відповідей -->
+    <color name="btn_disabled_bg">#E0E0E0</color>    <!-- Неактивна сіра кнопка -->
+    <color name="btn_disabled_text">#9E9E9E</color>  <!-- Текст неактивної кнопки -->
+    <color name="color_correct">#4CAF50</color>      <!-- Зелений акцент -->
+    <color name="color_incorrect">#F44336</color>    <!-- Червоний акцент -->
+    <color name="color_neutral">#ECEFF1</color>      <!-- Металічний сірий для варіантів -->
+
+    <!-- Кольори для карток вибору режиму (activity_test_type) -->
+    <color name="card_choice_bg">#F1F8E9</color>
+    <color name="card_choice_border">#8BC34A</color>
+    <color name="card_input_bg">#E3F2FD</color>
+    <color name="card_input_border">#2196F3</color>
+</resources>

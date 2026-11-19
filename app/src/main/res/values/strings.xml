@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">YourVocabulary</string>
+    <string name="title_settings">Налаштування тесту</string>
+
+    <!-- Мова -->
+    <string name="label_language">Оберіть мову:</string>
+    <string name="lang_english">Англійська</string>
+    <string name="lang_german">Німецька</string>
+
+    <!-- Кількість питань -->
+    <string name="label_questions_count">Кількість питань:</string>
+    <string name="count_5">5 питань</string>
+    <string name="count_7">7 питань</string>
+    <string name="count_10">10 питань</string>
+
+    <!-- Таймер -->
+    <string name="label_timer">Таймер на питання:</string>
+    <string name="timer_20s">20 секунд</string>
+    <string name="timer_30s">30 секунд</string>
+    <string name="timer_60s">1 хвилина</string>
+
+    <!-- Кнопки переходів -->
+    <string name="btn_next">Продовжити</string>
+    <string name="btn_back_to_settings">Назад до налаштувань</string>
+
+    <!-- Екран вибору режиму -->
+    <string name="title_choose_test_type">Оберіть режим</string>
+
+    <string name="mode_choice_title">🔘 Тест з варіантами</string>
+    <string name="mode_choice_desc">Обирай правильний варіант</string>
+
+    <string name="mode_input_title">✏️ Письмовий тест</string>
+    <string name="mode_input_desc">Вводи вручну свій варіант</string>
+
+    <string name="btn_start_test">Розпочати</string>
+
+    <!-- Екран тесту -->
+    <string name="question_counter">Питання %1$d з %2$d</string>
+    <string name="timer_format">00:%02d</string>
+    <string name="label_input_hint">Введіть переклад...</string>
+    <string name="btn_check">Перевірити</string>
+    <string name="btn_continue">Продовжити</string>
+    <string name="label_correct_answer">Правильна відповідь: %1$s</string>
+    <string name="label_user_answer">Ваша відповідь: %1$s</string>
+    <string name="feedback_correct">Чудово!</string>
+    <string name="feedback_incorrect">Неправильно</string>
+
+    <!-- Результати -->
+    <string name="dialog_result_title">Тест завершено!</string>
+    <string name="dialog_result_message">Ваш результат:\nПравильних відповідей: %1$d з %2$d\nПомилок: %3$d</string>
+    <string name="dialog_result_ok">OK</string>
+    <string name="time_out_msg">Час вичерпано!</string>
+</resources>
